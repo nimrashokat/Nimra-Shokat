@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>clearTimeout Example</title>
+</head>
+<body>
+
+<p>Click the Start button to wait 3 seconds, then Msg is displayed.</p>
+<p>Click the Stop button to cancel the timeout before it executes.</p>
+<p id="demo"></p>
+
+<button onclick="start()">Start</button>
+<button onclick="stop()">Stop</button>
+
+<script>
+var myVar;
+
+function start() {
+    myVar = setTimeout(MsgFunc, 3000);
+}
+
+function stop() {
+    clearTimeout(myVar);
+    document.getElementById("demo").innerHTML = "Timeout was stopped!";
+}
+
+function MsgFunc() {
+    document.getElementById("demo").innerHTML = "This text is displayed after three seconds";
+}
+</script>
+
+</body>
+</html>
